@@ -45,7 +45,7 @@ spec:
         requiredStatusChecks:
           contexts:
             entries:
-            - ci
+            - pr-build
       report: true
       rerunCommand: /test this
       runIfChanged: ""
