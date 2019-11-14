@@ -8,3 +8,6 @@ rbac:
   create: true
 domainFilters:
 - "{{ .Requirements.ingress.domain }}"
+certs:
+  image: gcr.io/jenkinsxio/builder-go:
+  imageTag: 2.0.987-319
