@@ -146,6 +146,11 @@ controllerbuild:
 {{- else }}
 controllerbuild:
   enabled: true
+  args:
+  - "controller"
+  - "build"
+  - "--batch-mode"
+  - "--verbose"
   role:
     enabled: true
     rules:
