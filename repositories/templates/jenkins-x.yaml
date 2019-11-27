@@ -21,6 +21,22 @@ metadata:
   labels:
     owner: jenkins-x
     provider: github
+    repository: terraform-google-jx
+  name: jenkins-x-terraform-google-jx
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x/terraform-google-jx
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x
+  repo: terraform-google-jx
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x
+    provider: github
     repository: jenkins-x-versions
   name: jenkins-x-jenkins-x-versions
   namespace: jx
