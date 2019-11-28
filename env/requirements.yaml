@@ -32,4 +32,4 @@ dependencies:
 - alias: ui
   name: jxui
   repository: http://chartmuseum.jenkins-x.io
-  version: 0.0.1007
+  version: 0.0.1011
