@@ -28,6 +28,7 @@ spec:
             - --images
             - --excludes=jetstack/cert-manager
             - --batch-mode
+            - --verbose
             command:
             - jx
             env:
@@ -51,6 +52,6 @@ spec:
           securityContext: {}
           terminationGracePeriodSeconds: 30
           serviceAccountName: tekton-bot
-  schedule: 0 */12 * * *
+  schedule: 0 * * * *
   successfulJobsHistoryLimit: 3
   suspend: false
