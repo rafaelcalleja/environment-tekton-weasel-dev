@@ -31,5 +31,5 @@ dependencies:
   version: 0.0.7
 - alias: ui
   name: jxui
-  repository: http://chartmuseum.jenkins-x.io
+  repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
   version: 0.0.1021
