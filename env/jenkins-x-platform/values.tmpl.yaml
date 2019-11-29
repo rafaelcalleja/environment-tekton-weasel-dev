@@ -153,18 +153,12 @@ controllerbuild:
   - "--verbose"
 # Turning on debug logging until we resolve https://github.com/jenkins-x/jx/issues/6217
   env:
-  - name: GIT_AUTHOR_EMAIL
-    value: jenkins-x@googlegroups.com
-  - name: GIT_AUTHOR_NAME
-    value: jenkins-x-bot
-  - name: JX_LOG_FORMAT
-    value: json
-  - name: JX_LOG_LEVEL
-    value: debug
-  - name: PIPELINE_KIND
-    value: dummy
-  - name: XDG_CONFIG_HOME
-    value: /home/jenkins
+    GIT_AUTHOR_EMAIL: jenkins-x@googlegroups.com
+    GIT_AUTHOR_NAME: jenkins-x-bot
+    JX_LOG_FORMAT: json
+    JX_LOG_LEVEL: debug
+    PIPELINE_KIND: dummy
+    XDG_CONFIG_HOME: /home/jenkins
   role:
     enabled: true
     rules:
