@@ -33,3 +33,6 @@ dependencies:
   name: jxui
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
   version: 0.0.1036
+- name: plantuml
+  repository: https://charts.gitlab.io/
+  version: 0.1.12
