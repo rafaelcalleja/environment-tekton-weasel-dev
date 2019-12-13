@@ -206,3 +206,19 @@ spec:
   providerName: github
   org: cloudbees
   repo: jx-arcalos-role-controller
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: cloudbees
+    provider: github
+    repository: arch-docs
+  name: cloudbees-arch-docs
+  namespace: jx
+spec:
+  description: Imported application for cloudbees/arch-docs
+  provider: https://github.com
+  providerName: github
+  org: cloudbees
+  repo: arch-docs
