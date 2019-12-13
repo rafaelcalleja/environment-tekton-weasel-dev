@@ -628,6 +628,36 @@ spec:
       trigger: (?m)^/test( boot| boot-lh-gl| lighthouse),?(s+|$)
     - agent: tekton
       alwaysRun: false
+      context: boot-vault-upgrade
+      name: boot-vault-upgrade
+      queries:
+      - labels:
+          entries:
+          - approved
+          - lgtm
+        missingLabels:
+          entries:
+          - do-not-merge
+          - do-not-merge/hold
+          - do-not-merge/work-in-progress
+          - needs-ok-to-test
+          - needs-rebase
+      - labels:
+          entries:
+            - updatebot
+        missingLabels:
+          entries:
+            - do-not-merge
+            - do-not-merge/hold
+            - do-not-merge/work-in-progress
+            - needs-ok-to-test
+            - needs-rebase
+            - needs-security-review
+      report: true
+      rerunCommand: /test boot-vault-upgrade
+      trigger: (?m)^/test( boot-vault-upgrade),?(s+|$)  
+    - agent: tekton
+      alwaysRun: false
       context: devpods
       name: devpods
       queries:
