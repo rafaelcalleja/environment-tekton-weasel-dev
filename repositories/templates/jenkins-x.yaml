@@ -213,6 +213,22 @@ metadata:
   labels:
     owner: jenkins-x
     provider: github
+    repository: hugo-extended-docker
+  name: jenkins-x-hugo
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x/hugo-extended-docker
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x
+  repo: hugo-extended-docker
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x
+    provider: github
     repository: jx-tutorial
   name: jenkins-x-jx-tutorial
   namespace: jx
