@@ -214,7 +214,7 @@ metadata:
     owner: jenkins-x
     provider: github
     repository: hugo-extended-docker
-  name: jenkins-x-hugo
+  name: jenkins-x-hugo-extended-docker
   namespace: jx
 spec:
   description: Imported application for jenkins-x/hugo-extended-docker
