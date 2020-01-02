@@ -120,8 +120,8 @@ spec:
       trigger: (?m)^/test( all| github),?(s+|$)
     - agent: tekton
       alwaysRun: false
-      context: bitbucketserver
-      name: bitbucketserver
+      context: bbs
+      name: bbs
       queries:
       - labels:
           entries:
@@ -147,8 +147,8 @@ spec:
             - needs-rebase
             - needs-security-review
       report: true
-      rerunCommand: /test bitbucketserver
-      trigger: (?m)^/test( all| bitbucketserver),?(s+|$)
+      rerunCommand: /test bbs
+      trigger: (?m)^/test( all| bbs),?(s+|$)
     - agent: tekton
       alwaysRun: false
       context: gitlab
