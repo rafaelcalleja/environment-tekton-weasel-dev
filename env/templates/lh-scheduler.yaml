@@ -29,6 +29,7 @@ spec:
             - pr-build
             - github
             - ghe
+            - gitlab
       queries:
       - labels:
           entries:
@@ -150,7 +151,7 @@ spec:
       rerunCommand: /test bbs
       trigger: (?m)^/test( all| bbs),?(s+|$)
     - agent: tekton
-      alwaysRun: false
+      alwaysRun: true
       context: gitlab
       name: gitlab
       queries:
