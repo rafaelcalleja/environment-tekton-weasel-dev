@@ -33,6 +33,7 @@ spec:
             - boot-vault-tls
             - boot-lh
             - boot-lh-ghe
+            - boot-vault-upgrade
       queries:
       - labels:
           entries:
