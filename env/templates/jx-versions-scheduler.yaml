@@ -33,6 +33,7 @@ spec:
             - boot-vault-tls
             - boot-lh
             - boot-lh-ghe
+            - boot-vault-upgrade
       queries:
       - labels:
           entries:
@@ -627,7 +628,7 @@ spec:
       rerunCommand: /test boot-lh-gl
       trigger: (?m)^/test( boot| boot-lh-gl| lighthouse),?(s+|$)
     - agent: tekton
-      alwaysRun: false
+      alwaysRun: true
       context: boot-vault-upgrade
       name: boot-vault-upgrade
       queries:
