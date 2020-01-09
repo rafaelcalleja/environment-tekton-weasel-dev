@@ -170,3 +170,23 @@ spec:
       report: true
       rerunCommand: /test unit
       trigger: (?m)^/test unit,?(\s+|$)      
+    - agent: tekton
+      alwaysRun: true
+      context: boot-lh-ghe
+      name: boot-lh-ghe
+      queries:
+        - labels:
+            entries:
+              - approved
+              - lgtm
+          missingLabels:
+            entries:
+              - do-not-merge
+              - do-not-merge/hold
+              - do-not-merge/work-in-progress
+              - needs-ok-to-test
+              - needs-rebase
+              - needs-security-review
+      report: true
+      rerunCommand: /test boot-lh-ghe
+      trigger: (?m)^/test boot-lh-ghe,?(\s+|$)
