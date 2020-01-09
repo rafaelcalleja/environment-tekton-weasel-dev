@@ -270,3 +270,19 @@ spec:
   providerName: github
   org: jenkins-x-apps
   repo: jx-app-statusbadge
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x-apps
+    provider: github
+    repository: jx-app-replicator
+  name: jenkins-x-apps-jx-app-replicator
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x-apps/jx-app-replicator
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x-apps
+  repo: jx-app-replicator
