@@ -171,7 +171,7 @@ spec:
       rerunCommand: /test unit
       trigger: (?m)^/test unit,?(\s+|$)      
     - agent: tekton
-      alwaysRun: true
+      alwaysRun: false
       context: boot-lh-ghe
       name: boot-lh-ghe
       queries:
