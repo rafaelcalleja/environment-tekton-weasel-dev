@@ -542,3 +542,19 @@ spec:
   providerName: github
   org: jenkins-x
   repo: bdd-jx
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x
+    provider: github
+    repository: jx-convert-jenkinsfile
+  name: jenkins-x-jx-convert-jenkinsfile
+  namespace: jx
+spec:
+  description: Tool to help converting Jenkinsfiles to jenkins-x.yml
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x
+  repo: jx-convert-jenkinsfile
