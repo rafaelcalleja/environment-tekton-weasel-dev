@@ -25,6 +25,7 @@ spec:
             - --filter=*
             - --images
             - --excludes=jetstack/cert-manager
+            - --excludes=stable/nginx-ingress  # TODO: Remove once we know version stream TLS tests pass with nginx-ingres >=1.29.0
             - --batch-mode
             command:
             - jx
