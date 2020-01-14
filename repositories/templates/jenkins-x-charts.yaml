@@ -206,3 +206,19 @@ spec:
   providerName: github
   org: jenkins-x-charts
   repo: kubernetes-replicator
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x-charts
+    provider: github
+    repository: velero-backup
+  name: jenkins-x-charts-velero-backup
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x-charts/velero-backup
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x-charts
+  repo: velero-backup
