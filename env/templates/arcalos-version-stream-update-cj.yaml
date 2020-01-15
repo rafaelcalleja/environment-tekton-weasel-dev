@@ -28,6 +28,7 @@ spec:
             - --images
             - --excludes=jetstack/cert-manager
             - --excludes=jenkins-x/jx-repository-controller
+            - --excludes=stable/nginx-ingress
             - --batch-mode
             - --verbose
             command:
@@ -53,6 +54,6 @@ spec:
           securityContext: {}
           terminationGracePeriodSeconds: 30
           serviceAccountName: tekton-bot
-  schedule: 0 * * * *
+  schedule: 0 */12 * * *
   successfulJobsHistoryLimit: 3
   suspend: false
