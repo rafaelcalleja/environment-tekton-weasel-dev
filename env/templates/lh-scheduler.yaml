@@ -30,7 +30,6 @@ spec:
             - github
             - ghe
             - gitlab
-            - bbs
       queries:
       - labels:
           entries:
@@ -121,7 +120,7 @@ spec:
       rerunCommand: /test github
       trigger: (?m)^/test( all| github),?(s+|$)
     - agent: tekton
-      alwaysRun: true
+      alwaysRun: false
       context: bbs
       name: bbs
       queries:
