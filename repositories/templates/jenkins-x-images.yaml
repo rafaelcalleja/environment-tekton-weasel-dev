@@ -1,0 +1,16 @@
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x-images
+    provider: github
+    repository: git
+  name: jenkins-x-images-git
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x-images/git
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x-images
+  repo: git
