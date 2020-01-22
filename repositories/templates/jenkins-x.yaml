@@ -101,6 +101,22 @@ metadata:
   labels:
     owner: jenkins-x
     provider: github
+    repository: helm-unit-tester
+  name: jenkins-x-helm-unit-tester
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x/helm-unit-tester
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x
+  repo: helm-unit-tester
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x
+    provider: github
     repository: dev-env
   name: jenkins-x-dev-env
   namespace: jx
