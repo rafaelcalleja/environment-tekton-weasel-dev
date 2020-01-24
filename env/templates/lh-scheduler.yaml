@@ -87,7 +87,7 @@ spec:
             - needs-security-review
       report: true
       rerunCommand: /test ghe
-      trigger: (?m)^/test( all| ghe),?(s+|$)
+      trigger: (?m)^/test( all| bdd| all-gh| ghe),?(s+|$)
     - agent: tekton
       alwaysRun: true
       context: github
@@ -118,7 +118,7 @@ spec:
             - needs-security-review
       report: true
       rerunCommand: /test github
-      trigger: (?m)^/test( all| github),?(s+|$)
+      trigger: (?m)^/test( all| bdd| all-gh| github),?(s+|$)
     - agent: tekton
       alwaysRun: false
       context: bbs
@@ -149,7 +149,7 @@ spec:
             - needs-security-review
       report: true
       rerunCommand: /test bbs
-      trigger: (?m)^/test( all| bbs),?(s+|$)
+      trigger: (?m)^/test( all| bdd| bbs),?(s+|$)
     - agent: tekton
       alwaysRun: true
       context: gitlab
@@ -180,4 +180,4 @@ spec:
             - needs-security-review
       report: true
       rerunCommand: /test gitlab
-      trigger: (?m)^/test( all| gitlab),?(s+|$)
+      trigger: (?m)^/test( all| bdd| gitlab),?(s+|$)
