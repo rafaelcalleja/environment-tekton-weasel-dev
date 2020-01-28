@@ -230,7 +230,7 @@ metadata:
     owner: cloudbees
     provider: github
     repository: tekton-sdm-app
-  name: tekton-sdm-app
+  name: cloudbees-tekton-sdm-app
   namespace: jx
 spec:
   description: Imported application for cloudbees/tekton-sdm-app
