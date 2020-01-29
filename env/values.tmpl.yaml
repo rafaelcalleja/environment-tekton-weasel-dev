@@ -199,6 +199,8 @@ JenkinsXGitHubTest:
 
 GcsJenkinsXChartMuseumKey: vault:tekton-weasel/sa/chartmuseum-gcs:data
 
+terraformGoogleJXSA: vault:tekton-weasel/sa/terraform-google-jx-sa:json
+
 arcalos:
   adminUsername: vault:tekton-weasel/arcalos:admin-username
   dashboardAuthId: vault:tekton-weasel/arcalos:dashboard-auth-id
