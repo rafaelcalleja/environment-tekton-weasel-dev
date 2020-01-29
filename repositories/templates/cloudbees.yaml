@@ -101,6 +101,21 @@ metadata:
   labels:
     owner: cloudbees
     provider: github
+    repository: arcalos-instance-template
+  name: cloudbees-arcalos-instance-template
+  namespace: jx
+spec:
+  description: Imported application for cloudbees/arcalos-instance-template
+  provider: https://github.com
+  providerName: github
+  org: cloudbees
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: cloudbees
+    provider: github
     repository: arcalosui-frontend
   name: cloudbees-arcalosui-frontend
   namespace: jx
