@@ -182,3 +182,34 @@ spec:
       report: true
       rerunCommand: /test gitlab
       trigger: (?m)^/test( all| bdd| gitlab),?(s+|$)
+    - agent: tekton
+      alwaysRun: false
+      context: migrate-from-prow
+      name: migrate-from-prow
+      queries:
+        - labels:
+            entries:
+              - approved
+              - lgtm
+          missingLabels:
+            entries:
+              - do-not-merge
+              - do-not-merge/hold
+              - do-not-merge/work-in-progress
+              - needs-ok-to-test
+              - needs-rebase
+              - needs-security-review
+        - labels:
+            entries:
+              - updatebot
+          missingLabels:
+            entries:
+              - do-not-merge
+              - do-not-merge/hold
+              - do-not-merge/work-in-progress
+              - needs-ok-to-test
+              - needs-rebase
+              - needs-security-review
+      report: true
+      rerunCommand: /test migrate-from-prow
+      trigger: (?m)^/test migrate-from-prow,?(s+|$)
