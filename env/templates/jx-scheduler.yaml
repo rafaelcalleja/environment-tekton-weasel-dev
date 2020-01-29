@@ -151,7 +151,7 @@ spec:
       rerunCommand: /test boot-vault
       trigger: (?m)^/test( all| boot| boot-vault),?(\s+|$)
     - agent: tekton
-      alwaysRun: false
+      alwaysRun: true
       context: unit
       name: unit
       queries:
