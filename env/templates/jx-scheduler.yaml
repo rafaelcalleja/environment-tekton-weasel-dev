@@ -35,6 +35,7 @@ spec:
             - bdd
             - lint
             - boot-vault
+            - unit
       queries:
       - labels:
           entries:
