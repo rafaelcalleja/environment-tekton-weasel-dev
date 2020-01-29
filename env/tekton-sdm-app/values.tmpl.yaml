@@ -1,0 +1,4 @@
+sdm:
+  account: cloudbees
+  installId: tekton-weasel
+  privateKey: vault:tekton-weasel/sdm:privateKey

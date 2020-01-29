@@ -36,3 +36,6 @@ dependencies:
 - name: plantuml
   repository: https://charts.gitlab.io/
   version: 0.1.12
+- name: tekton-sdm-app
+  repository: http://chartmuseum.jenkins-x.io
+  version: 0.0.23
