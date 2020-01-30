@@ -4,7 +4,7 @@ pipelineConfig:
     release:
       pipeline:
         agent:
-          image: gcr.io/jenkinsxio/builder-go
+          image: gcr.io/jenkinsxio/builder-go:0.1.658
         environment:
           - name: DEPLOY_NAMESPACE
             value: jx
