@@ -253,3 +253,19 @@ spec:
   providerName: github
   org: cloudbees
   repo: tekton-sdm-app
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: cloudbees
+    provider: github
+    repository: jx-sdm-app
+  name: cloudbees-jx-sdm-app
+  namespace: jx
+spec:
+  description: Imported application for cloudbees/jx-sdm-app
+  provider: https://github.com
+  providerName: github
+  org: cloudbees
+  repo: jx-sdm-app
