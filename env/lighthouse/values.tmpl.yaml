@@ -14,20 +14,7 @@ git:
 service:
   name: hook
   
-replicaCount: 2
+replicaCount: 1
 
 image:
   repository: gcr.io/jenkinsxio/lighthouse
-
-vault:
-{{- if eq .Requirements.secretStorage "vault" }}
-  enabled: true
-{{- else }}
-  enabled: false
-{{- end }}
-
-clusterName: {{ .Requirements.cluster.clusterName }}
-
-user: "{{ .Parameters.pipelineUser.username }}"
-
-oauthToken: "{{ .Parameters.pipelineUser.token }}"
