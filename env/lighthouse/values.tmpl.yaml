@@ -18,3 +18,9 @@ replicaCount: 1
 
 image:
   repository: gcr.io/jenkinsxio/lighthouse
+
+clusterName: {{ .Requirements.cluster.clusterName }}
+
+user: "{{ .Parameters.pipelineUser.username }}"
+
+oauthToken: "{{ .Parameters.pipelineUser.token }}"
