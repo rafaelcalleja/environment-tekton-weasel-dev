@@ -109,6 +109,7 @@ spec:
   provider: https://github.com
   providerName: github
   org: cloudbees
+  repo: arcalos-instance-template
 ---
 apiVersion: jenkins.io/v1
 kind: SourceRepository
