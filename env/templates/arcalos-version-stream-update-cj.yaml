@@ -27,6 +27,7 @@ spec:
             - --filter=*
             - --images
             - --excludes=jetstack/cert-manager
+            - --excludes=jenkins-x/jx-repository-controller
             - --excludes=stable/nginx-ingress
             - --batch-mode
             - --verbose
