@@ -85,6 +85,22 @@ metadata:
   labels:
     owner: jenkins-x-charts
     provider: github
+    repository: knative-serving
+  name: jenkins-x-charts-knative-serving
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x-charts/knative-serving
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x-charts
+  repo: knative-serving
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x-charts
+    provider: github
     repository: nexus
   name: jenkins-x-charts-nexus
   namespace: jx
