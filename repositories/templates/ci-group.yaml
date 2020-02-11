@@ -7,6 +7,4 @@ spec:
     apiVersion: jenkins.io/v1
     kind: Scheduler
     name: ci-scheduler
-  repositories:
-  - name: jxui-frontend-ci
-    kind: SourceRepository
+  repositories: []
