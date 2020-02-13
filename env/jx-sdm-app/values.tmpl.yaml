@@ -2,3 +2,7 @@ sdm:
   account: cloudbees
   installId: tekton-weasel
   privateKey: vault:tekton-weasel/sdm:jxAppPrivateKey
+# As we have a lot pipeline activities on tekton weasel
+resources:
+  limits:
+    memory: 1Gi
