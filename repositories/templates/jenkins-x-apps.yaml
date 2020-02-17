@@ -286,3 +286,19 @@ spec:
   providerName: github
   org: jenkins-x-apps
   repo: jx-app-replicator
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x-apps
+    provider: github
+    repository: jx-app-fossa
+  name: jenkins-x-apps-jx-app-fossa
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x-apps/jx-app-fossa
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x-apps
+  repo: jx-app-fossa
