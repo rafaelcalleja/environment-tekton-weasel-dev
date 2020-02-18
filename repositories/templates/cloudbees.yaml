@@ -270,3 +270,20 @@ spec:
   providerName: github
   org: cloudbees
   repo: jx-sdm-app
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: cloudbees
+    provider: github
+    repository: rollout-sdm-app
+  name: cloudbees-rollout-sdm-app
+  namespace: jx
+spec:
+  description: Imported application for cloudbees/rollout-sdm-app
+  provider: https://github.com
+  providerName: github
+  org: cloudbees
+  repo: rollout-sdm-app
+
