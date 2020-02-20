@@ -202,6 +202,7 @@ gcactivities:
     - "activities"
     - "--batch-mode"
     - "--pr-history-limit=30"
+    - "--pull-request-age=120h"
   cronjob:
     enabled: true
     schedule: "0/30 * * * *"
