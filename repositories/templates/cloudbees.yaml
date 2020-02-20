@@ -101,6 +101,22 @@ metadata:
   labels:
     owner: cloudbees
     provider: github
+    repository: arcalos-config
+  name: cloudbees-arcalos-config
+  namespace: jx
+spec:
+  description: Imported application for cloudbees/arcalos-config
+  provider: https://github.com
+  providerName: github
+  org: cloudbees
+  repo: arcalos-config
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: cloudbees
+    provider: github
     repository: arcalos-instance-template
   name: cloudbees-arcalos-instance-template
   namespace: jx
