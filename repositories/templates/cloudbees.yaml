@@ -302,4 +302,19 @@ spec:
   providerName: github
   org: cloudbees
   repo: rollout-sdm-app
-
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: cloudbees
+    provider: github
+    repository: cloud-build-sdm-app
+  name: cloudbees-cloud-build-sdm-app
+  namespace: jx
+spec:
+  description: Imported application for cloudbees/cloud-build-sdm-app
+  provider: https://github.com
+  providerName: github
+  org: cloudbees
+  repo: cloud-build-sdm-app
