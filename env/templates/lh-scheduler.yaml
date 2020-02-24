@@ -20,7 +20,7 @@ spec:
     entries:
     - agent: tekton
       alwaysRun: true
-      context: ""
+      context: pr-build
       name: pr-build
       policy:
         requiredStatusChecks:
@@ -30,7 +30,6 @@ spec:
             - github
             - ghe
             - gitlab
-            - bbs
       queries:
       - labels:
           entries:
@@ -121,7 +120,7 @@ spec:
       rerunCommand: /test github
       trigger: (?m)^/test( all| bdd| all-gh| github),?(s+|$)
     - agent: tekton
-      alwaysRun: true
+      alwaysRun: false
       context: bbs
       name: bbs
       queries:
