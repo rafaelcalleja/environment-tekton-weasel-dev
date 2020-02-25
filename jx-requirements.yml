@@ -37,4 +37,4 @@ storage:
 versionStream:
   ref: ""
   url: ""
-webhook: prow
+webhook: lighthouse
