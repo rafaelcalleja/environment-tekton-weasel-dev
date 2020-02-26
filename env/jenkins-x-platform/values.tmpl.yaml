@@ -143,6 +143,7 @@ controllerbuild:
   - "--batch-mode"
   - "--git-credentials"
   - "--verbose"
+  - "--job-url-base=https://dashboard{{.Requirements.ingress.namespaceSubDomain}}{{.Requirements.ingress.domain}}"
   env:
     GIT_AUTHOR_EMAIL: jenkins-x@googlegroups.com
     GIT_AUTHOR_NAME: jenkins-x-bot
