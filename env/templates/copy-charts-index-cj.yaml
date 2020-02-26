@@ -35,7 +35,7 @@ spec:
             args:
               - -c
               - gcloud auth activate-service-account --key-file=/gcs-jenkinsx-chartmuseum/gcs-chartmuseum.key.json
-                && gsutil -h 'Cache-Control:public, max-age=0, no-transform' cp gs://chartmuseum.jenkins-x.io/charts/index-cache.yaml
+                && gsutil -h 'Cache-Control:no-cache,max-age=0,no-transform' cp gs://chartmuseum.jenkins-x.io/charts/index-cache.yaml
                 gs://chartmuseum.jenkins-x.io/index.yaml
             image: gcr.io/jenkinsxio/builder-go:{{ .Values.versions.builders }}
             imagePullPolicy: IfNotPresent
