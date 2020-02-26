@@ -31,17 +31,13 @@ spec:
               - $(URL)
           containers:
           - command:
-            - gcs-copy
-            env:
-            - name: BUCKET_NAME
-              value: chartmuseum.jenkins-x.io
-            - name: COPY_FROM
-              value: charts/index-cache.yaml
-            - name: COPY_TO
-              value: index.yaml
-            - name: GOOGLE_APPLICATION_CREDENTIALS
-              value: /gcs-jenkinsx-chartmuseum/gcs-chartmuseum.key.json
-            image: jenkinsxio/gcs-copy:0.0.1
+              - /bin/bash
+            args:
+              - -c
+              - gcloud auth activate-service-account --key-file=/gcs-jenkinsx-chartmuseum/gcs-chartmuseum.key.json
+                && gsutil -h 'Cache-Control:public, max-age=0, no-transform' cp gs://chartmuseum.jenkins-x.io/charts/index-cache.yaml
+                gs://chartmuseum.jenkins-x.io/index.yaml
+            image: gcr.io/jenkinsxio/builder-go:{{ .Values.versions.builders }}
             imagePullPolicy: IfNotPresent
             name: copy-chart-index-to-gcs
             volumeMounts:
