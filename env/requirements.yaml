@@ -9,8 +9,8 @@ dependencies:
 - alias: lighthouse
   condition: lighthouse.enabled
   name: lighthouse
-  version: 0.0.459
   repository: http://chartmuseum.jenkins-x.io
+  version: 0.0.459
 - name: jenkins-x-platform
   repository: http://chartmuseum.jenkins-x.io
   version: 2.0.2027
@@ -34,7 +34,7 @@ dependencies:
 - alias: ui
   name: jxui
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
-  version: 0.0.1111
+  version: 0.0.1113
 - name: plantuml
   repository: https://charts.gitlab.io/
   version: 0.1.12
