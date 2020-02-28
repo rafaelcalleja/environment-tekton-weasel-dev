@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: arcalos-config
 data:
-  aps_environment: poc
+  aps_environment: alpha
