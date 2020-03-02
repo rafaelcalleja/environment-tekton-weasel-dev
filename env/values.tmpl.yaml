@@ -219,3 +219,7 @@ arcalos:
 CJXDChartmuseum:
   username: vault:tekton-weasel/creds/cb-cjxd-chartmuseum:username
   password: vault:tekton-weasel/creds/cb-cjxd-chartmuseum:password
+
+whitesource:
+  apiKey: vault:tekton-weasel/creds/whitesource:api-key
+  userKey: vault:tekton-weasel/creds//whitesource:user-key
