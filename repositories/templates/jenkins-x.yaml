@@ -574,3 +574,35 @@ spec:
   providerName: github
   org: jenkins-x
   repo: jx-convert-jenkinsfile
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x
+    provider: github
+    repository: enhancements
+  name: jenkins-x-enhancements
+  namespace: jx
+spec:
+  description: Contains Jenkins X enhancement proposals
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x
+  repo: enhancements
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x-labs
+    provider: github
+    repository: cloud-resources
+  name: jenkins-x-cloud-resources
+  namespace: jx
+spec:
+  description: Scripts for creating cloud resources
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x-labs
+  repo: cloud-resources
