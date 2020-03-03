@@ -369,8 +369,8 @@ spec:
       trigger: (?m)^/test( terraform-tekton),?(s+|$)
     - agent: tekton
       alwaysRun: false
-      context: boot-alpha
-      name: boot-alpha
+      context: boot-helm3
+      name: boot-helm3
       queries:
       - labels:
           entries:
@@ -395,8 +395,38 @@ spec:
             - needs-rebase
             - needs-security-review
       report: true
-      rerunCommand: /test boot-alpha
-      trigger: (?m)^/test( all| boot-alpha),?(s+|$)
+      rerunCommand: /test boot-helm3
+      trigger: (?m)^/test( all| boot-helm3),?(s+|$)
+    - agent: tekton
+      alwaysRun: false
+      context: boot-helm3-mc
+      name: boot-helm3-mc
+      queries:
+      - labels:
+          entries:
+          - approved
+          - lgtm
+        missingLabels:
+          entries:
+          - do-not-merge
+          - do-not-merge/hold
+          - do-not-merge/work-in-progress
+          - needs-ok-to-test
+          - needs-rebase
+      - labels:
+          entries:
+            - updatebot
+        missingLabels:
+          entries:
+            - do-not-merge
+            - do-not-merge/hold
+            - do-not-merge/work-in-progress
+            - needs-ok-to-test
+            - needs-rebase
+            - needs-security-review
+      report: true
+      rerunCommand: /test boot-helm3-mc
+      trigger: (?m)^/test( all| boot-helm3-mc),?(s+|$)
     - agent: tekton
       alwaysRun: true
       context: boot-local
