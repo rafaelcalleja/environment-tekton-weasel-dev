@@ -1,0 +1,15 @@
+apiVersion: jenkins.io/v1
+kind: Environment
+metadata:
+  name: hornblower
+spec:
+  kind: Permanent
+  label: hornblower
+  namespace: jx
+  order: 200
+  previewGitInfo:
+    user: {}
+  promotionStrategy: Manual
+  source:
+    ref: master
+    url: "https://github.com/arcalos-environments/environment-hornberyl-dev.git"
