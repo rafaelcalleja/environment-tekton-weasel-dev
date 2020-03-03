@@ -1,0 +1,15 @@
+apiVersion: jenkins.io/v1
+kind: Environment
+metadata:
+  name: arcalos-prod-mgmt
+spec:
+  kind: Permanent
+  label: arcalos-prod-mgmt
+  namespace: jx
+  order: 300
+  previewGitInfo:
+    user: {}
+  promotionStrategy: Manual
+  source:
+    ref: master
+    url: "https://github.com/arcalos-management/environment-arcalos-prod-mgmt-dev"
