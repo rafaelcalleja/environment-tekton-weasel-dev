@@ -12,3 +12,13 @@ spec:
     kind: SourceRepository
   - name: jenkins-x-bucketrepo
     kind: SourceRepository
+  - name: cloudbees-jx-tenant-service
+    kind: SourceRepository
+  - name: cloudbees-lighthouse-githubapp
+    kind: SourceRepository
+  - name: cloudbees-jx-repository-controller
+    kind: SourceRepository
+  - name: cloudbees-jx-arcalos-role-controller
+    kind: SourceRepository
+  - name: cloudbees-jx-segment-controller
+    kind: SourceRepository
