@@ -15,6 +15,23 @@ spec:
         - master
       name: release
       context: ""
+      policy:
+        requiredStatusChecks:
+          contexts:
+            entries:
+            - whitesource
+    - agent: tekton
+      branches:
+        entries:
+        - master
+      cluster: ""
+      context: whitesource
+      labels: {}
+      maxConcurrency: 0
+      name: whitesource
+      report: false
+      runIfChanged: ""
+      skipBranches: {}
   presubmits:
     replace: true
     entries:

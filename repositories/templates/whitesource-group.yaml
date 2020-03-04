@@ -1,0 +1,14 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepositoryGroup
+metadata:
+  name: whitesource-group
+spec:
+  scheduler:
+    apiVersion: jenkins.io/v1
+    kind: Scheduler
+    name: whitesource-scheduler
+  repositories: 
+  - name: jenkins-x-sso-operator
+    kind: SourceRepository
+  - name: jenkins-x-bucketrepo
+    kind: SourceRepository
