@@ -90,6 +90,7 @@ spec:
           contexts:
             entries:
             - pr-build
+            - lint
       queries:
       - excludedBranches: {}
         includedBranches: {}
@@ -126,6 +127,27 @@ spec:
       runIfChanged: ""
       skipBranches: {}
       trigger: (?m)^/test( all| this),?(\s+|$)
+    - agent: tekton
+      alwaysRun: true
+      context: lint
+      name: lint
+      queries:
+      - labels:
+          entries:
+          - approved
+          - lgtm
+        missingLabels:
+          entries:
+          - do-not-merge
+          - do-not-merge/hold
+          - do-not-merge/work-in-progress
+          - needs-ok-to-test
+          - needs-rebase
+          - needs-security-review
+      report: true
+      rerunCommand: /test lint
+      trigger: (?m)^/test( all| lint),?(\s+|$)
+
   schedulerAgent:
     agent: tekton
   trigger:
