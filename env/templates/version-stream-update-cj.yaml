@@ -25,6 +25,7 @@ spec:
             - --filter=*
             - --images
             - --excludes=jetstack/cert-manager
+            - --excludes=jx-labs/jxl-boot
             - --batch-mode
             command:
             - jx
