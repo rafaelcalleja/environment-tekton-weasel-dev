@@ -37,6 +37,22 @@ metadata:
   labels:
     owner: jenkins-x
     provider: github
+    repository: terraform-aws-eks-jx
+  name: jenkins-x-terraform-aws-eks-jx
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x/terraform-aws-eks-jx
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x
+  repo: terraform-aws-eks-jx
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x
+    provider: github
     repository: jenkins-x-versions
   name: jenkins-x-jenkins-x-versions
   namespace: jx
