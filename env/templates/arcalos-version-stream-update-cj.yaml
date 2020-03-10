@@ -28,7 +28,6 @@ spec:
             - --images
             - --excludes=jetstack/cert-manager
             - --excludes=jx-labs/jxl-boot
-            - --excludes=jenkins-x/jx-repository-controller
             - --batch-mode
             - --verbose
             command:
