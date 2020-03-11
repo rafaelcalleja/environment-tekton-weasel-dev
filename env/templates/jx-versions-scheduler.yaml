@@ -368,7 +368,7 @@ spec:
       rerunCommand: /test terraform-tekton
       trigger: (?m)^/test( terraform-tekton),?(s+|$)
     - agent: tekton
-      alwaysRun: true
+      alwaysRun: false
       context: boot-helm3
       name: boot-helm3
       queries:
@@ -398,7 +398,7 @@ spec:
       rerunCommand: /test boot-helm3
       trigger: (?m)^/test( all| boot-helm3),?(s+|$)
     - agent: tekton
-      alwaysRun: true
+      alwaysRun: false
       context: boot-helm3-mc
       name: boot-helm3-mc
       queries:
