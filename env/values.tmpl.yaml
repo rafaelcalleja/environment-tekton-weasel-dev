@@ -227,3 +227,8 @@ CJXDChartmuseum:
 whitesource:
   apiKey: vault:tekton-weasel/creds/whitesource:api-key
   userKey: vault:tekton-weasel/creds//whitesource:user-key
+
+AWSCreds:
+  credentials: vault:tekton-weasel/creds/aws_creds:credentials
+  account_id: vault:tekton-weasel/creds/aws_creds:account_id
+  vault_user: vault:tekton-weasel/creds/aws_creds:vault_user
