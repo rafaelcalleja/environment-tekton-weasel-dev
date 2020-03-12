@@ -1,0 +1,60 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: jx-issue-lifecycle-rotten
+spec:
+  concurrencyPolicy: Forbid
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+    spec:
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app: jx-issue-lifecycle-rotten
+            release: jx
+        spec:
+          containers:
+          - image: gcr.io/k8s-prow/commenter:v20190528-0d7c4b53a
+            command:
+            - /app/robots/commenter/app.binary
+            args:
+            - |-
+              --query=org:jenkins-x
+              -label:lifecycle/frozen
+              label:lifecycle/stale
+              -label:lifecycle/rotten
+            - --updated=720h
+            - --token=/etc/token/oauth
+            - |-
+              --comment=Stale issues rot after 30d of inactivity.
+              Mark the issue as fresh with `/remove-lifecycle rotten`.
+              Rotten issues close after an additional 30d of inactivity.
+              If this issue is safe to close now please do so with `/close`.
+              Provide feedback via https://jenkins-x.io/community.
+              /lifecycle rotten
+            - --template
+            - --ceiling=10
+            - --confirm
+            imagePullPolicy: IfNotPresent
+            name: jx-issue-lifecycle-rotten
+            resources: {}
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - name: token
+              mountPath: /etc/token
+          dnsPolicy: ClusterFirst
+          restartPolicy: Never
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+          volumes:
+          - name: token
+            secret:
+              secretName: oauth-token
+  schedule: 10 * * * *
+  successfulJobsHistoryLimit: 3
+  suspend: false
