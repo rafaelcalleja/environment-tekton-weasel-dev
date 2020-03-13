@@ -1,0 +1,66 @@
+apiVersion: jenkins.io/v1
+kind: Scheduler
+metadata:
+  name: rebase-and-lgtm-scheduler
+spec:
+  merger:
+    mergeMethod: rebase
+  plugins:
+    entries:
+      - label
+  postsubmits:
+    replace: true
+    entries:
+      - agent: tekton
+        branches:
+          entries:
+            - master
+        cluster: ""
+        context: ""
+        labels: {}
+        maxConcurrency: 0
+        name: release
+        report: false
+        runIfChanged: ""
+        skipBranches: {}
+  presubmits:
+    replace: true
+    entries:
+      - agent: tekton
+        alwaysRun: true
+        branches: {}
+        cluster: ""
+        context: pr-build
+        labels: {}
+        maxConcurrency: 0
+        mergeMethod: ""
+        name: pr-build
+        optional: false
+        policy:
+          Replace: false
+          requiredStatusChecks:
+            contexts:
+              entries:
+                - pr-build
+        queries:
+          - excludedBranches: {}
+            includedBranches: {}
+            labels:
+              entries:
+                - approved
+                - lgtm
+            milestone: ""
+            missingLabels:
+              entries:
+                - do-not-merge
+                - do-not-merge/hold
+                - do-not-merge/work-in-progress
+                - needs-ok-to-test
+                - needs-rebase
+                - needs-security-review
+            reviewApprovedRequired: false
+        report: true
+        rerunCommand: /test this
+        runIfChanged: ""
+        skipBranches: {}
+        trigger: (?m)^/test( all| this),?(\s+|$)
