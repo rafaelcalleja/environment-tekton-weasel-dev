@@ -1,0 +1,12 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepositoryGroup
+metadata:
+  name: rebase-and-lgtm-group
+spec:
+  scheduler:
+    apiVersion: jenkins.io/v1
+    kind: Scheduler
+    name: rebase-and-lgtm-scheduler
+  repositories: 
+  - name: jenkins-x-terraform-google-jx
+    kind: SourceRepository
