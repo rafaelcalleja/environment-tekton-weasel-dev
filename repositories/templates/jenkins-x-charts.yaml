@@ -5,6 +5,22 @@ metadata:
   labels:
     owner: jenkins-x-charts
     provider: github
+    repository: acme
+  name: jenkins-x-charts-acme
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x-charts/acme
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x-charts
+  repo: acme
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x-charts
+    provider: github
     repository: empty
   name: jenkins-x-charts-empty
   namespace: jx
