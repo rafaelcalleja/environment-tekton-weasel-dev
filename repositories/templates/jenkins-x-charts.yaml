@@ -53,6 +53,22 @@ metadata:
   labels:
     owner: jenkins-x-charts
     provider: github
+    repository: istio
+  name: jenkins-x-charts-istio
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x-charts/istio
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x-charts
+  repo: istio
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x-charts
+    provider: github
     repository: jxboot-resources
   name: jenkins-x-charts-jxboot-resources
   namespace: jx
