@@ -622,3 +622,19 @@ spec:
   providerName: github
   org: jenkins-x-labs
   repo: cloud-resources
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x
+    provider: github
+    repository: jx-logging
+  name: jenkins-x-jx-logging
+  namespace: jx
+spec:
+  description: jx logging library
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x
+  repo: jx-logging
