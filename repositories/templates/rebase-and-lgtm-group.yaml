@@ -10,5 +10,7 @@ spec:
   repositories: 
   - name: jenkins-x-terraform-google-jx
     kind: SourceRepository
+  - name: terraform-aws-eks-jx
+    kind: SourceRepository
   - name: jenkins-x-jx-docs
     kind: SourceRepository  
