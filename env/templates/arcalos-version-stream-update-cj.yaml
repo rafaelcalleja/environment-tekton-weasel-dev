@@ -28,6 +28,7 @@ spec:
             - --images
             - --excludes=jetstack/cert-manager
             - --excludes=jx-labs/jxl-boot
+            - --excludes=stable/nginx-ingress  # Stick with 1.34.2 due to https://github.com/helm/charts/pull/21654 breaking upgrades
             - --batch-mode
             - --verbose
             command:
