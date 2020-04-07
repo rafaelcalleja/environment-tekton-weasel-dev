@@ -18,7 +18,7 @@ dependencies:
   repository: https://charts.bitnami.com/bitnami
 - name: jx-app-athens
   repository: http://chartmuseum.jenkins-x.io
-  version: 0.0.18
+  version: 0.0.17
 - name: jx-app-sso
   repository: http://chartmuseum.jenkins-x.io
   version: 0.0.14
