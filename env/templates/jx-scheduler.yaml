@@ -52,6 +52,7 @@ spec:
             - bdd
             - lint
             - boot-vault
+            - tf-boot
             - unit
       queries:
       - labels:
@@ -168,6 +169,26 @@ spec:
       report: true
       rerunCommand: /test boot-vault
       trigger: (?m)^/test( all| boot| boot-vault),?(\s+|$)
+    - agent: tekton
+      alwaysRun: true
+      context: tf-boot
+      name: tf-boot
+      queries:
+        - labels:
+            entries:
+              - approved
+              - lgtm
+          missingLabels:
+            entries:
+              - do-not-merge
+              - do-not-merge/hold
+              - do-not-merge/work-in-progress
+              - needs-ok-to-test
+              - needs-rebase
+              - needs-security-review
+      report: true
+      rerunCommand: /test tf-boot
+      trigger: (?m)^/test( all| tf-boot),?(\s+|$)      
     - agent: tekton
       alwaysRun: true
       context: unit
