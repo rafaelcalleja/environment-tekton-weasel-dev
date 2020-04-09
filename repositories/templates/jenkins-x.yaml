@@ -638,3 +638,19 @@ spec:
   providerName: github
   org: jenkins-x
   repo: jx-logging
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x
+    provider: github
+    repository: logrus-stackdriver-formatter
+  name: jenkins-x-logrus-stackdriver-formatter
+  namespace: jx
+spec:
+  description: logrus stackdriver formatter
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x
+  repo: logrus-stackdriver-formatter
