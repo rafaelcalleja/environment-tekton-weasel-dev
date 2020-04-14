@@ -19,21 +19,9 @@ spec:
     replace: true
     entries:
     - agent: tekton
-      alwaysRun: true
+      alwaysRun: false
       context: static
       name: static
-      policy:
-        requiredStatusChecks:
-          contexts:
-            entries:
-            - static
-            - tekton
-            - boot-local
-            - boot-vault
-            - boot-vault-tls
-            - boot-lh
-            - boot-lh-ghe
-            - boot-vault-upgrade
       queries:
       - labels:
           entries:
@@ -62,71 +50,20 @@ spec:
       rerunCommand: /test static
       trigger: (?m)^/test( all| static),?(s+|$)
     - agent: tekton
-      alwaysRun: false
-      context: tiller
-      name: tiller
-      queries:
-      - labels:
-          entries:
-          - approved
-          - lgtm
-        missingLabels:
-          entries:
-          - do-not-merge
-          - do-not-merge/hold
-          - do-not-merge/work-in-progress
-          - needs-ok-to-test
-          - needs-rebase
-          - needs-security-review
-      - labels:
-          entries:
-            - updatebot
-        missingLabels:
-          entries:
-            - do-not-merge
-            - do-not-merge/hold
-            - do-not-merge/work-in-progress
-            - needs-ok-to-test
-            - needs-rebase
-            - needs-security-review
-      report: true
-      rerunCommand: /test tiller
-      trigger: (?m)^/test( tiller),?(s+|$)
-    - agent: tekton
-      alwaysRun: false
-      context: gitops
-      name: gitops
-      queries:
-      - labels:
-          entries:
-          - approved
-          - lgtm
-        missingLabels:
-          entries:
-          - do-not-merge
-          - do-not-merge/hold
-          - do-not-merge/work-in-progress
-          - needs-ok-to-test
-          - needs-rebase
-          - needs-security-review
-      - labels:
-          entries:
-            - updatebot
-        missingLabels:
-          entries:
-            - do-not-merge
-            - do-not-merge/hold
-            - do-not-merge/work-in-progress
-            - needs-ok-to-test
-            - needs-rebase
-            - needs-security-review
-      report: true
-      rerunCommand: /test gitops
-      trigger: (?m)^/test( gitops),?(s+|$)
-    - agent: tekton
       alwaysRun: true
       context: tekton
       name: tekton
+      policy:
+        requiredStatusChecks:
+          contexts:
+            entries:
+              - tekton
+              - boot-local
+              - boot-vault
+              - boot-vault-tls
+              - boot-lh
+              - boot-lh-ghe
+              - boot-vault-upgrade
       queries:
       - labels:
           entries:
@@ -154,219 +91,6 @@ spec:
       report: true
       rerunCommand: /test tekton
       trigger: (?m)^/test( all| tekton),?(s+|$)
-    - agent: tekton
-      alwaysRun: false
-      context: ekstekton
-      name: ekstekton
-      queries:
-      - labels:
-          entries:
-          - approved
-          - lgtm
-        missingLabels:
-          entries:
-          - do-not-merge
-          - do-not-merge/hold
-          - do-not-merge/work-in-progress
-          - needs-ok-to-test
-          - needs-rebase
-          - needs-security-review
-      - labels:
-          entries:
-            - updatebot
-        missingLabels:
-          entries:
-            - do-not-merge
-            - do-not-merge/hold
-            - do-not-merge/work-in-progress
-            - needs-ok-to-test
-            - needs-rebase
-            - needs-security-review
-      report: true
-      rerunCommand: /test ekstekton
-      trigger: (?m)^/test( ekstekton),?(s+|$)
-    - agent: tekton
-      alwaysRun: false
-      context: eksclassic
-      name: eksclassic
-      queries:
-      - labels:
-          entries:
-          - approved
-          - lgtm
-        missingLabels:
-          entries:
-          - do-not-merge
-          - do-not-merge/hold
-          - do-not-merge/work-in-progress
-          - needs-ok-to-test
-          - needs-rebase
-          - needs-security-review
-      - labels:
-          entries:
-            - updatebot
-        missingLabels:
-          entries:
-            - do-not-merge
-            - do-not-merge/hold
-            - do-not-merge/work-in-progress
-            - needs-ok-to-test
-            - needs-rebase
-            - needs-security-review
-      report: true
-      rerunCommand: /test eksclassic
-      trigger: (?m)^/test( eksclassic),?(s+|$)
-    - agent: tekton
-      alwaysRun: false
-      context: ng
-      name: ng
-      queries:
-      - labels:
-          entries:
-          - approved
-          - lgtm
-        missingLabels:
-          entries:
-          - do-not-merge
-          - do-not-merge/hold
-          - do-not-merge/work-in-progress
-          - needs-ok-to-test
-          - needs-rebase
-          - needs-security-review
-      - labels:
-          entries:
-            - updatebot
-        missingLabels:
-          entries:
-            - do-not-merge
-            - do-not-merge/hold
-            - do-not-merge/work-in-progress
-            - needs-ok-to-test
-            - needs-rebase
-            - needs-security-review
-      report: true
-      rerunCommand: /test ng
-      trigger: (?m)^/test( ng),?(s+|$)
-    - agent: tekton
-      alwaysRun: false
-      context: static-gke-us-east1-b
-      name: static-gke-us-east1-b
-      queries:
-      - labels:
-          entries:
-          - approved
-          - lgtm
-        missingLabels:
-          entries:
-          - do-not-merge
-          - do-not-merge/hold
-          - do-not-merge/work-in-progress
-          - needs-ok-to-test
-          - needs-rebase
-      - labels:
-          entries:
-            - updatebot
-        missingLabels:
-          entries:
-            - do-not-merge
-            - do-not-merge/hold
-            - do-not-merge/work-in-progress
-            - needs-ok-to-test
-            - needs-rebase
-            - needs-security-review
-      report: true
-      rerunCommand: /test static-gke-us-east1-b
-      trigger: (?m)^/test( static-gke-us-east1-b),?(s+|$)
-    - agent: tekton
-      alwaysRun: false
-      context: helm3
-      name: helm3
-      queries:
-      - labels:
-          entries:
-          - approved
-          - lgtm
-        missingLabels:
-          entries:
-          - do-not-merge
-          - do-not-merge/hold
-          - do-not-merge/work-in-progress
-          - needs-ok-to-test
-          - needs-rebase
-      - labels:
-          entries:
-            - updatebot
-        missingLabels:
-          entries:
-            - do-not-merge
-            - do-not-merge/hold
-            - do-not-merge/work-in-progress
-            - needs-ok-to-test
-            - needs-rebase
-            - needs-security-review
-      report: true
-      rerunCommand: /test helm3
-      trigger: (?m)^/test( helm3),?(s+|$)
-    - agent: tekton
-      alwaysRun: false
-      context: terraform-static
-      name: terraform-static
-      queries:
-      - labels:
-          entries:
-          - approved
-          - lgtm
-        missingLabels:
-          entries:
-          - do-not-merge
-          - do-not-merge/hold
-          - do-not-merge/work-in-progress
-          - needs-ok-to-test
-          - needs-rebase
-      - labels:
-          entries:
-            - updatebot
-        missingLabels:
-          entries:
-            - do-not-merge
-            - do-not-merge/hold
-            - do-not-merge/work-in-progress
-            - needs-ok-to-test
-            - needs-rebase
-            - needs-security-review
-      report: true
-      rerunCommand: /test terraform-static
-      trigger: (?m)^/test( terraform-static),?(s+|$)
-    - agent: tekton
-      alwaysRun: false
-      context: terraform-tekton
-      name: terraform-tekton
-      queries:
-      - labels:
-          entries:
-          - approved
-          - lgtm
-        missingLabels:
-          entries:
-          - do-not-merge
-          - do-not-merge/hold
-          - do-not-merge/work-in-progress
-          - needs-ok-to-test
-          - needs-rebase
-      - labels:
-          entries:
-            - updatebot
-        missingLabels:
-          entries:
-            - do-not-merge
-            - do-not-merge/hold
-            - do-not-merge/work-in-progress
-            - needs-ok-to-test
-            - needs-rebase
-            - needs-security-review
-      report: true
-      rerunCommand: /test terraform-tekton
-      trigger: (?m)^/test( terraform-tekton),?(s+|$)
     - agent: tekton
       alwaysRun: false
       context: boot-helm3
