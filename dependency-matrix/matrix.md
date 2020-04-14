@@ -2,4 +2,4 @@
 
 Dependency | Sources | Version | Mismatched versions
 ---------- | ------- | ------- | -------------------
-[cloudbees/jxui-frontend](https://github.com/cloudbees/jxui-frontend) |  | [0.0.1203](https://github.com/cloudbees/jxui-frontend/releases/tag/v0.0.1203) | 
+[cloudbees/jxui-frontend](https://github.com/cloudbees/jxui-frontend) |  | [0.0.1204](https://github.com/cloudbees/jxui-frontend/releases/tag/v0.0.1204) | 
