@@ -21,11 +21,7 @@ spec:
             command:
             - /app/robots/commenter/app.binary
             args:
-            - |-
-              --query=org:jenkins-x
-              -label:lifecycle/frozen
-              -label:lifecycle/stale
-              -label:lifecycle/rotten
+            - --query=org:jenkins-x -label:lifecycle/frozen -label:lifecycle/stale -label:lifecycle/rotten
             - --updated=2160h
             - --token=/etc/token/oauth
             - |-
