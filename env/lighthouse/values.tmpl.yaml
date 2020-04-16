@@ -11,16 +11,20 @@ git:
   name: {{ .Requirements.cluster.gitName | default "github" }}
   server: {{ .Requirements.cluster.gitServer | default "https://github.com" }}
 
-service:
-  name: hook
-  
-replicaCount: 2
+webhooks:
+  replicaCount: 2
+  service:
+    name: hook
 
 image:
-  repository: gcr.io/jenkinsxio/lighthouse
+  parentRepository: gcr.io/jenkinsxio
 
 clusterName: {{ .Requirements.cluster.clusterName }}
 
 user: "{{ .Parameters.pipelineUser.username }}"
 
 oauthToken: "{{ .Parameters.pipelineUser.token }}"
+
+# Specifying environment variable for link to build reports
+env:
+  LIGHTHOUSE_REPORT_URL_BASE: "https://dashboard{{.Requirements.ingress.namespaceSubDomain}}{{.Requirements.ingress.domain}}"
