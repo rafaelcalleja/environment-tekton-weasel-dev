@@ -341,38 +341,6 @@ metadata:
   labels:
     owner: jenkins-x
     provider: github
-    repository: jenkins-x-serverless-filerunner
-  name: jenkins-x-jenkins-x-serverless-filerunner
-  namespace: jx
-spec:
-  description: Imported application for jenkins-x/jenkins-x-serverless-filerunner
-  provider: https://github.com
-  providerName: github
-  org: jenkins-x
-  repo: jenkins-x-serverless-filerunner
----
-apiVersion: jenkins.io/v1
-kind: SourceRepository
-metadata:
-  labels:
-    owner: jenkins-x
-    provider: github
-    repository: jenkins-x-serverless
-  name: jenkins-x-jenkins-x-serverless
-  namespace: jx
-spec:
-  description: Imported application for jenkins-x/jenkins-x-serverless
-  provider: https://github.com
-  providerName: github
-  org: jenkins-x
-  repo: jenkins-x-serverless
----
-apiVersion: jenkins.io/v1
-kind: SourceRepository
-metadata:
-  labels:
-    owner: jenkins-x
-    provider: github
     repository: homebrew-jx
   name: jenkins-x-homebrew-jx
   namespace: jx
