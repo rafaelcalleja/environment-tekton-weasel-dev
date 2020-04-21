@@ -48,7 +48,7 @@ spec:
             - needs-security-review
       report: true
       rerunCommand: /test static
-      trigger: (?m)^/test( all| static),?(s+|$)
+      trigger: (?m)^/test( static),?(s+|$)
     - agent: tekton
       alwaysRun: true
       context: tekton
