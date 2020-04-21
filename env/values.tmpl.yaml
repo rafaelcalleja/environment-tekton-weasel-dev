@@ -21,6 +21,10 @@ cluster:
   tls: true
 {{- end }}
 
+datadog:
+  apiKey: vault:tekton-weasel/arcalos/datadog-app:apiKey
+  appKey: vault:tekton-weasel/arcalos/datadog-app:appKey
+
 netrc: |-
   machine github.com
     login "{{ .Parameters.pipelineUser.username }}"
