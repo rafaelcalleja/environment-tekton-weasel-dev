@@ -10,7 +10,6 @@ dependencies:
   condition: lighthouse.enabled
   name: lighthouse
   repository: http://chartmuseum.jenkins-x.io
-  version: 0.0.459
 - name: jenkins-x-platform
   repository: http://chartmuseum.jenkins-x.io
 - condition: external-dns.enabled
