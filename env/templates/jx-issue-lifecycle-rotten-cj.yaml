@@ -50,7 +50,7 @@ spec:
           volumes:
           - name: token
             secret:
-              secretName: oauth-token
+              secretName: lighthouse-oauth-token
   schedule: 10 * * * *
   successfulJobsHistoryLimit: 3
   suspend: false
