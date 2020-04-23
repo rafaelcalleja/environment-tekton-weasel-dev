@@ -1,8 +1,4 @@
-{{- if eq .Requirements.webhook "prow" }}
-enabled: true
-{{- else }}
 enabled: false
-{{- end }}
 
 hmacToken: "{{ .Parameters.prow.hmacToken }}"
 oauthToken: "{{ .Parameters.pipelineUser.token }}"
@@ -14,7 +10,7 @@ pipelinerunner:
   args:
   - controller
   - pipelinerunner
-  enabled: "true"
+  enabled: "false"
 tillerNamespace: ""
 
 sinker:
