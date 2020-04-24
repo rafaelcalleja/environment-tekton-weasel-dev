@@ -185,6 +185,10 @@ JenkinsXGitLabTestUser:
   username: vault:tekton-weasel/creds/jenkins-x-gitlab-test-user:username
   password: vault:tekton-weasel/creds/jenkins-x-gitlab-test-user:password # pragma: allowlist secret
 
+JenkinsXGitLabApproverTestUser:
+  username: vault:tekton-weasel/creds/jenkins-x-gitlab-approver-test-user:username
+  password: vault:tekton-weasel/creds/jenkins-x-gitlab-approver-test-user:password # pragma: allowlist secret
+
 JenkinsXVersionsTestUser:
   username: vault:tekton-weasel/creds/jenkins-x-versions-test-user:username
   password: vault:tekton-weasel/creds/jenkins-x-versions-test-user:password # pragma: allowlist secret
