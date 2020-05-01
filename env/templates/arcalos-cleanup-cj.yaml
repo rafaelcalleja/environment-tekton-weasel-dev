@@ -60,9 +60,9 @@ spec:
           volumes:
             - name: sa
               secret:
-                secretName: arcalos-secret
+                secretName: arcalos-alpha-prod-secret
                 items:
-                - key: ci_sa
+                - key: arcalos_prod_sa
                   path: ci_bot.json
             - name: cleanup-config
               configMap:
