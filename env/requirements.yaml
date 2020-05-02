@@ -2,10 +2,10 @@ dependencies:
 - alias: tekton
   name: tekton
   repository: http://chartmuseum.jenkins-x.io
-- alias: prow
-  condition: prow.enabled
-  name: prow
-  repository: http://chartmuseum.jenkins-x.io
+#- alias: prow
+#  condition: prow.enabled
+#  name: prow
+#  repository: http://chartmuseum.jenkins-x.io
 - alias: lighthouse
   condition: lighthouse.enabled
   name: lighthouse
