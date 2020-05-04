@@ -2,10 +2,6 @@ dependencies:
 - alias: tekton
   name: tekton
   repository: http://chartmuseum.jenkins-x.io
-#- alias: prow
-#  condition: prow.enabled
-#  name: prow
-#  repository: http://chartmuseum.jenkins-x.io
 - alias: lighthouse
   condition: lighthouse.enabled
   name: lighthouse
@@ -32,7 +28,7 @@ dependencies:
 - alias: ui
   name: jxui
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
-  version: 0.0.1243
+  version: 0.0.1244
 - name: plantuml
   repository: https://charts.gitlab.io/
   version: 0.1.12
