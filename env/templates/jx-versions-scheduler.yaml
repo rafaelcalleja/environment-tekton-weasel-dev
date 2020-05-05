@@ -61,7 +61,6 @@ spec:
               - boot-local
               - boot-vault
               - boot-vault-tls
-              - boot-lh
               - boot-lh-ghe
               - boot-vault-upgrade
       queries:
@@ -292,7 +291,7 @@ spec:
       rerunCommand: /test bucketrepo
       trigger: (?m)^/test( all| boot| bucketrepo| lighthouse),?(s+|$)
     - agent: tekton
-      alwaysRun: true
+      alwaysRun: false
       context: boot-lh
       name: boot-lh
       queries:
