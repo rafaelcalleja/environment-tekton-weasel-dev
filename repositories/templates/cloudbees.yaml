@@ -334,3 +334,19 @@ spec:
   providerName: github
   org: cloudbees
   repo: cloud-build-sdm-app
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: cloudbees
+    provider: github
+    repository: saas-cli
+  name: cloudbees-saas-cli
+  namespace: jx
+spec:
+  description: Imported application for cloudbees/saas-cli
+  provider: https://github.com
+  providerName: github
+  org: cloudbees
+  repo: saas-cli
