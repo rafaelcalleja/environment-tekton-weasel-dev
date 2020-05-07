@@ -14,3 +14,19 @@ spec:
   providerName: github
   org: jenkins-x-images
   repo: git
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x-images
+    provider: github
+    repository: dog
+  name: jenkins-x-images-dog
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x-images/dog
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x-images
+  repo: dog
