@@ -53,6 +53,7 @@ spec:
             - boot-vault
             - tf-boot
             - unit
+            - codegen
       queries:
       - labels:
           entries:
