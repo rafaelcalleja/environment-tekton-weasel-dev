@@ -129,6 +129,26 @@ spec:
       rerunCommand: /test lint
       trigger: (?m)^/test( all| lint),?(\s+|$)
     - agent: tekton
+      alwaysRun: true
+      context: codegen
+      name: codegen
+      queries:
+      - labels:
+          entries:
+          - approved
+          - lgtm
+        missingLabels:
+          entries:
+          - do-not-merge
+          - do-not-merge/hold
+          - do-not-merge/work-in-progress
+          - needs-ok-to-test
+          - needs-rebase
+          - needs-security-review
+      report: true
+      rerunCommand: /test codegen
+      trigger: (?m)^/test( all| codegen),?(\s+|$)      
+    - agent: tekton
       alwaysRun: false
       context: images
       name: images
