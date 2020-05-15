@@ -1,15 +1,15 @@
 apiVersion: jenkins.io/v1
 kind: Environment
 metadata:
-  name: hornblower
+  name: arcalos-play-mgmt
 spec:
   kind: Permanent
-  label: hornblower
+  label: arcalos-play-mgmt
   namespace: jx
-  order: 200
+  order: 100
   previewGitInfo:
     user: {}
   promotionStrategy: Manual
   source:
     ref: master
-    url: "https://github.com/arcalos-environments/environment-hornberyl-dev.git"
+    url: "https://github.com/arcalos-management/environment-arcalos-play-mgmt-dev.git"
