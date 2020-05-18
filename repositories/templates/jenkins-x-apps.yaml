@@ -53,6 +53,22 @@ metadata:
   labels:
     owner: jenkins-x-apps
     provider: github
+    repository: jx-app-sonar-scanner
+  name: jenkins-x-apps-jx-app-sonar-scanner
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x-apps/jx-app-sonar-scanner
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x-apps
+  repo: jx-app-sonar-scanner  
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x-apps
+    provider: github
     repository: jx-app-datadog
   name: jenkins-x-apps-jx-app-datadog
   namespace: jx
