@@ -139,9 +139,7 @@ controllerbuild:
   args:
   - "controller"
   - "build"
-  - "--git-reporting"
   - "--batch-mode"
-  - "--git-credentials"
   - "--verbose"
   - "--job-url-base=https://dashboard{{.Requirements.ingress.namespaceSubDomain}}{{.Requirements.ingress.domain}}"
   env:
