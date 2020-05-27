@@ -15,6 +15,7 @@ data:
     pushd arcalos
       ./cleanup.sh
     popd
+    sac cleanup
 ---
 apiVersion: batch/v1beta1
 kind: CronJob
