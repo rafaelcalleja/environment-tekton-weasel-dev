@@ -15,6 +15,7 @@ data:
     pushd arcalos
       ./cleanup.sh
     popd
+    sac cleanup
 ---
 apiVersion: batch/v1beta1
 kind: CronJob
@@ -42,7 +43,7 @@ spec:
               value: "/secret/sa/ci_bot.json"
             - name: XDG_CONFIG_HOME
               value: "/root"
-            image: gcr.io/jenkinsxio/builder-go:{{ .Values.versions.builders }}
+            image: gcr.io/jenkinsxio/sac:0.0.58
             imagePullPolicy: IfNotPresent
             name: arcalos-cleanup
             resources: {}
