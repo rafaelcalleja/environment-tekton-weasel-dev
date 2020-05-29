@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sync-nginx-images-script
+data:
+  sync-nginx-images.sh: |
+    #!/bin/sh
+    cat /kaniko-secrets/kaniko/kaniko-secret.json | /bin/skopeo login -u _json_key --password-stdin https://gcr.io
+    /bin/skopeo sync --src docker --dest docker quay.io/kubernetes-ingress-controller/nginx-ingress-controller gcr.io/jenkinsxio
