@@ -1,0 +1,51 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: sync-nginx-images-to-gcr
+spec:
+  concurrencyPolicy: Forbid
+  failedJobsHistoryLimit: 1
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+    spec:
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app: sync-nginx-images
+            release: jx
+        spec:
+          containers:
+          - command: ["./sync-nginx-images.sh"]
+            image: quay.io/skopeo/upstream
+            imagePullPolicy: IfNotPresent
+            name: sync-images
+            resources: {}
+            terminationMessagePath: /dev/termination-log
+            terminationMessagePolicy: File
+            volumeMounts:
+            - name: kaniko-secret
+              mountPath: /kaniko-secrets
+            - name: sync-nginx-images-script
+              mountPath: /sync-nginx-images.sh
+              subPath: sync-nginx-images.sh
+          volumes:
+          - name: kaniko-secret
+            secret:
+              secretName: kaniko-secret
+              items:
+              - key: kaniko-secret
+                path: kaniko/kaniko-secret.json
+          - name: sync-nginx-images-script
+            configMap:
+              name: sync-nginx-images-script
+              defaultMode: 0777
+          dnsPolicy: ClusterFirst
+          restartPolicy: Never
+          schedulerName: default-scheduler
+          securityContext: {}
+          terminationGracePeriodSeconds: 30
+  schedule: 0 */12 * * *
+  successfulJobsHistoryLimit: 3
+  suspend: false
