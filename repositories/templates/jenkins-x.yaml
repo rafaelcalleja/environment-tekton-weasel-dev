@@ -622,3 +622,19 @@ spec:
   providerName: github
   org: jenkins-x
   repo: logrus-stackdriver-formatter
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x
+    provider: github
+    repository: lighthouse-config
+  name: jenkins-x-lighthouse-config
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x/lighthouse-config
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x
+  repo: lighthouse-config
