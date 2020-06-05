@@ -1,12 +1,11 @@
-jxui:
-  sso:
-    create: true
-    useSSOOperator: true
-    skipExposeService: true
-    certIssuerName: letsencrypt-prod
-    domain: "{{ .Requirements.ingress.domain }}"
-    oidcIssuerUrl: "https://dex-jx.{{ .Requirements.ingress.domain }}"
-    connector: github
+sso:
+  create: true
+  useSSOOperator: true
+  skipExposeService: true
+  certIssuerName: letsencrypt-prod
+  domain: "{{ .Requirements.ingress.domain }}"
+  oidcIssuerUrl: "https://dex-jx.{{ .Requirements.ingress.domain }}"
+  connector: github
 
 resources:
   limits:
