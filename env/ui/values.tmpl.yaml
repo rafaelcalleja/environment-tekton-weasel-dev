@@ -1,3 +1,9 @@
+auth:
+  # required in weasel since auth proxy runs in front of it,
+  # jxui-native SSO doesn't support GitHub and basic auth is not wanted here.
+  # This is a temporary fix until the SSO/IAM topic is clarified.
+  type: none
+
 resources:
   limits:
     cpu: 200m
