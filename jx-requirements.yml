@@ -35,6 +35,6 @@ storage:
     enabled: false
     url: ""
 versionStream:
-  ref: v1.0.489
+  ref: cdcecc3ad97fb5d1cb19ddb8d9fceafd649c1c67
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: lighthouse
