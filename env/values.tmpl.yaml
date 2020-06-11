@@ -230,7 +230,7 @@ arcalos:
   prowHMACToken: vault:tekton-weasel/arcalos:prow-hmac-token
   ciSA: vault:tekton-weasel/arcalos/sa:json
   arcalosProdSA: vault:tekton-weasel/arcalos/arcalos-prod-sa:json
-  arcalosBetaPreviewSA: vault:tekton-weasel/arcalos/arcalos-beta-preview-sa:json
+  arcalosBetaPreviewSA: vault:tekton-weasel/arcalos-beta-preview/arcalos-beta-preview-sa:json
   segmentWriteKey: vault:tekton-weasel/arcalos/segment:write-key
 
 CJXDChartmuseum:
