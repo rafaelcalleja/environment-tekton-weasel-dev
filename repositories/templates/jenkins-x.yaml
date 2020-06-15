@@ -638,3 +638,35 @@ spec:
   providerName: github
   org: jenkins-x
   repo: lighthouse-config
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x
+    provider: github
+    repository: jx-api
+  name: jenkins-x-jx-api
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x/jx-api
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x
+  repo: jx-api
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x
+    provider: github
+    repository: jx-kube-client
+  name: jenkins-x-jx-kube-client
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x/jx-kube-client
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x
+  repo: jx-kube-client
