@@ -21,6 +21,22 @@ metadata:
   labels:
     owner: jenkins-x-apps
     provider: github
+    repository: jx-app-kubeless
+  name: jenkins-x-apps-jx-app-kubeless
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x-apps/jx-app-kubeless
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x-apps
+  repo: jx-app-kubeless  
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x-apps
+    provider: github
     repository: jx-app-cheese
   name: jenkins-x-apps-jx-app-cheese
   namespace: jx
