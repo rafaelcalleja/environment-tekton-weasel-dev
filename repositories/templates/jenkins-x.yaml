@@ -670,3 +670,19 @@ spec:
   providerName: github
   org: jenkins-x
   repo: jx-kube-client
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x
+    provider: github
+    repository: jx-vault-client
+  name: jenkins-x-jx-vault-client
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x/jx-vault-client
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x
+  repo: jx-vault-client
