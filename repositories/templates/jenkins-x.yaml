@@ -686,3 +686,19 @@ spec:
   providerName: github
   org: jenkins-x
   repo: jx-vault-client
+---
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  labels:
+    owner: jenkins-x
+    provider: github
+    repository: jx-role-controller
+  name: jenkins-x-jx-role-controller
+  namespace: jx
+spec:
+  description: Imported application for jenkins-x/jx-role-controller
+  provider: https://github.com
+  providerName: github
+  org: jenkins-x
+  repo: jx-role-controller
