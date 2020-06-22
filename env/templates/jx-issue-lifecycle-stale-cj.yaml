@@ -53,4 +53,4 @@ spec:
               secretName: lighthouse-oauth-token
   schedule: 0 * * * *
   successfulJobsHistoryLimit: 3
-  suspend: false
+  suspend: true

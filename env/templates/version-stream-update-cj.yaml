@@ -53,4 +53,4 @@ spec:
           serviceAccountName: tekton-bot
   schedule: 0 */12 * * *
   successfulJobsHistoryLimit: 3
-  suspend: false
+  suspend: true
