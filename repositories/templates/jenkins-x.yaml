@@ -85,22 +85,6 @@ metadata:
   labels:
     owner: jenkins-x
     provider: github
-    repository: lighthouse
-  name: jenkins-x-lighthouse
-  namespace: jx
-spec:
-  description: Imported application for jenkins-x/lighthouse
-  provider: https://github.com
-  providerName: github
-  org: jenkins-x
-  repo: lighthouse
----
-apiVersion: jenkins.io/v1
-kind: SourceRepository
-metadata:
-  labels:
-    owner: jenkins-x
-    provider: github
     repository: go-scm
   name: jenkins-x-go-scm
   namespace: jx
