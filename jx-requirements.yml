@@ -15,13 +15,13 @@ environments:
 - key: production
 gitops: true
 ingress:
-  domain: jenkins-x.live
-  externalDNS: true
+  domain: ""
+  externalDNS: false
   namespaceSubDomain: -jx.
   tls:
-    email: jenkins-x@cloudbees.com
-    enabled: true
-    production: true
+    email: ""
+    enabled: false
+    production: false
 kaniko: true
 secretStorage: vault
 storage:
